@@ -4,7 +4,9 @@
 
 ## Windows EXE
 
-从 [Releases](https://github.com/9999999-svg/text-encoding-converter/releases) 下载 `TextEncodingConverter.exe`，双击运行。
+[下载 Windows EXE](https://github.com/9999999-svg/text-encoding-converter/releases/download/v1.0.0/TextEncodingConverter.exe) · [下载 Python 源码 ZIP](https://github.com/9999999-svg/text-encoding-converter/archive/refs/heads/main.zip) · [查看源码](text_encoding_converter.py)
+
+双击运行。
 
 1. 选择源文件夹，指定一个尚不存在、位于源目录外的新输出目录。
 2. 根据文件来源明确选择源编码和目标编码。默认 GBK → UTF-8 BOM，适合部分中文 CSV 的转换。
@@ -34,14 +36,12 @@ TextEncodingConverter.exe --help
 
 ## 构建
 
-本次环境：Windows x64、Python 3.14.6、PyInstaller 6.21.0。EXE 未签名。依赖体积和卸载见 [DEPENDENCIES.md](DEPENDENCIES.md)，实际验证见 [VALIDATION.md](VALIDATION.md)。
+构建环境：Windows x64、Python 3.14.6、PyInstaller 6.21.0。EXE 未签名。依赖体积和卸载见 [DEPENDENCIES.md](DEPENDENCIES.md)。
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements-build.txt
-.venv\Scripts\python.exe test_text_encoding_converter.py
 .venv\Scripts\python.exe build.py
-.venv\Scripts\python.exe test_text_encoding_converter.py --exe dist\TextEncodingConverter.exe
 ```
 
 自有代码和文档 MIT，第三方许可见 `licenses/` 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
